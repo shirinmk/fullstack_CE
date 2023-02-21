@@ -18,3 +18,27 @@
 // The flip was tails but you chose heads...you lose!
 // If the result is tails and the user selects tails, display the following message within an alert:
 // The flip was tails and you chose tails...you win!
+
+let randomNum = Math.round(Math.random() *10)
+let coinFlip = randomNum;
+
+//prompt user to select Heads or Tails
+let choice = prompt("Select Heads or Tails");
+if (coinFlip < 5){
+    computerChoice = "Heads";
+}else{
+    computerChoice = "Tails";
+}
+
+if ((choice == "Heads") && (computerChoice == "Heads")){
+    document.write(' The flip was heads and you chose heads...you win!')
+}else if( (choice == "Tails") && (computerChoice == "Heads")){
+    document.write("The flip was heads but you chose tails...you lose!");
+}else if ((choice == "Heads") && (computerChoice == "Tails")){
+    document.write("The flip was tails but you chose heads...you lose!");
+}else{
+    document.write("The flip was tails and you chose tails...you win!");
+}
+console.log(choice);
+console.log(computerChoice);
+console.log(coinFlip)
