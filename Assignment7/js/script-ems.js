@@ -56,21 +56,43 @@ if(localStorage.getItem('arrayOfEmployees')){
 }
 
 // GET DOM ELEMENTS
-let table     = document.getElementById("employees");
+let table     = document.getElementById("empTable");
+let empID       = document.querySelector('#id').value;
+let empName     = document.querySelector('#name').value;
+let empExt      = document.querySelector('#extension').value;
+let empEmail    = document.querySelector('#email').value;
+let empDept     = document.querySelector('#department').value;
+// INSERT A NEW ROW AT THE END OF THE EMPLOYEES TABLE
+let empRow      = table.insertRow();
+
+
 arrayOfEmployees.forEach((item) =>{
     console.log(`elemtn is ${item}`)
     console.log(`size of this elem is ${item.length}`)
-  
+    let cellID      = empRow.insertCell();
+ cellName    = empRow.insertCell();
+ cellExt     = empRow.insertCell();
+ cellEmail   = empRow.insertCell();
+ cellDept    = empRow.insertCell();
+ cellDelete  = empRow.insertCell();
     for(let i=0; i< item.length;i++){
         console.log('inisde for')
-        empId = item[0];
-        name =  item[1];
-        extension = item[2];
-        email = item[3];
-        department = item[4]
-        console.log(`${empId}  ${department}`)
+        empID = item[0];
+        empName =  item[1];
+        empExt = item[2];
+        empEmail = item[3];
+        empDept = item[4]
+        // console.log(`${empId}  ${department}`)
+         // APPEND THE TEXT VALUES AS TEXT NODES WITHIN THE CELLS
+   
         
     }
+    cellID.appendChild(document.createTextNode(empID));
+    cellName.appendChild(document.createTextNode(empName));
+    cellExt.appendChild(document.createTextNode(empExt));
+    cellEmail.appendChild(document.createTextNode(empEmail));
+    cellDept.appendChild(document.createTextNode(empDept));
+    empRow      = table.insertRow();
 
 })
 
