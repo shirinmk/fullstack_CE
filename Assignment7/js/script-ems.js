@@ -38,18 +38,47 @@
 // You’ll need to use JSON.parse() to retrieve the array from storage.
 // **************************************************
 
-
+let form         = document.getElementById("addForm");
 
 // CREATE AN ARRAY OF EMPLOYEES
 let arrayOfEmployees = [
-    
+    ['empId1','name1','ext1','email1','depart1'],
+    ['empId2','name2','ext2','email2','depart2'],
+    ['empId3','name3','ext3','email3','depart3'],
 ]
 
 // CHECK TO SEE IF STORAGE OBJECT EXISTS WHEN THE PAGE LOADS
 // IF DOES, RETURN STORAGE OBJECT INTO ARRAY INSTEAD OF POPULATED ARRAY
-
+if(localStorage.getItem('arrayOfEmployees')){
+    arrayOfEmployees = JSON.parse(localStorage.getItem('arrayOfEmployees'))
+}else{
+    localStorage.setItem('arrayOfEmployees', JSON.stringify(arrayOfEmployees))
+}
 
 // GET DOM ELEMENTS
+let table     = document.getElementById("employees");
+arrayOfEmployees.forEach((item) =>{
+    console.log(`elemtn is ${item}`)
+    console.log(`size of this elem is ${item.length}`)
+  
+    for(let i=0; i< item.length;i++){
+        console.log('inisde for')
+        empId = item[0];
+        name =  item[1];
+        extension = item[2];
+        email = item[3];
+        department = item[4]
+        console.log(`${empId}  ${department}`)
+        
+    }
+
+})
+
+
+
+
+
+
 
 
 // BUILD THE EMPLOYEES TABLE WHEN THE PAGE LOADS
