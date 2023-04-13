@@ -1,10 +1,11 @@
 // GET ADD EMPLOYEE FORM AND EMPLOYEE TABLE FROM THE DOM
 let form         = document.getElementById("addForm");
 let table     = document.getElementById("employees");
+let empCount = document.getElementById("empCount");
 
 
 // SET A COUNT VARIABLE TO DISPLAY NEXT TO EMPLOYEES HEADER
-let count = 1
+let count = 0
 
 // ADD EMPLOYEE
 form.addEventListener('submit', (e) => {
@@ -21,18 +22,20 @@ form.addEventListener('submit', (e) => {
     //CREATE ROW IN TABLE with this structure
     //<tr> <td> empId</td> <td> empId</td> <td> empId</td> <td> empId</td> <td> empId</td> </tr>
  
-    let row = table.insertRow(count);
+    let row = table.insertRow();
   
-    let cell1 = row.insertCell(0);
-    let cell2 = row.insertCell(1);
-    let cell3 = row.insertCell(2);
-    let cell4 = row.insertCell(3);
-    let cell5 = row.insertCell(4);
-    cell1.innerHTML = empId;
-    cell2.innerHTML = name;
-    cell3.innerHTML = extension;
-    cell4.innerHTML = email;
-    cell5.innerHTML = department;
+    let cellID = row.insertCell();
+    let cellName = row.insertCell();
+    let cellExt = row.insertCell();
+    let cellEmail = row.insertCell();
+    let cellDept = row.insertCell();
+    let cellDelete = row.insertCell();
+
+    cellID.appendChild(document.createTextNode(empId))
+    cellName.appendChild(document.createTextNode(name))
+    cellExt.appendChild(document.createTextNode(extension))
+    cellEmail.appendChild(document.createTextNode(email))
+    cellDept.appendChild(document.createTextNode(department))
    
 
     //ADDING THE DELETE BUTTON TO EACH ROW
@@ -41,10 +44,12 @@ form.addEventListener('submit', (e) => {
     deleteBtn.className = 'btn btn-danger btn-sm text-right delete'
     let textDelete = document.createTextNode('X')
     deleteBtn.appendChild(textDelete)
-    row.appendChild(deleteBtn)
-    count = count + 1
+    cellDelete.appendChild(deleteBtn)
+    
 
     form.reset();
+    count++;
+    empCount.value =`(${count})`
 
 
 
@@ -71,10 +76,14 @@ table.addEventListener('click',(e) => {
     // console.log('click')
     if(e.target.classList.contains('delete')){
         // console.log("dlele")
-        if(confirm(`are you sure to delete this row ${e.target.parentElement.innerText}`)){
+        if(confirm(`are you sure to delete this row `)){
+            table.deleteRow(e.target.parentElement.parentElement.rowIndex)
             // table.remove(e.target.childElement)
             // row.deleteRow(count-1)
             // deleteRow(e.target.path-to-tr-tag.rowIndex)
+            count--;
+            empCount.value = `(${count})`
+
           
         }
     }
