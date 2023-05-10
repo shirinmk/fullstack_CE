@@ -1,0 +1,12 @@
+// //GET FROM USER STRING
+// let userInput = prompt("Enter your string")
+
+// //BREAK EACH LETTER AND PUT IT IN ARRAY
+// let arr = userInput.split('')
+// console.log(arr)
+
+// //NOW SORT THE LETTERS IN ARRAY
+// console.log(arr.sort())
+
+// //NOW JOIN THESE LETTERS
+// console.log(arr.join('')) //IMPORTANT INSIDE JOIN HAVE ''

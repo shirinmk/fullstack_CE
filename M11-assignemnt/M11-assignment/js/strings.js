@@ -40,7 +40,26 @@
 // }
 
 //STEP 8
+// let old_string = "The quick brown fox jumps over the lazy dog"
+// let start      = old_string.indexOf('the')
+// let end        = old_string.indexOf('dog')
+// let new_string = old_string.substring(start, end+3)
+// alert(new_string.toUpperCase())
+
+//TRY TO SOLVE IT ANOTHER WAY
 
 //STEP 9
+// let sentence = " THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG          "
+// alert(sentence.trim().toUpperCase())
 
 //STEP 10
+// let sentence = "the quick brown fox jumps over the lazy dog"
+// let arr = sentence.split(' ')
+// alert(arr)
+// arr.forEach(element => {
+//     console.log(element.charAt(0).toUpperCase())
+// });
+// alert(arr)
+
+
+//DO IT ???
