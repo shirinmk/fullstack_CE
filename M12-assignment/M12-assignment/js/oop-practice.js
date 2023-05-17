@@ -136,5 +136,24 @@
 
 // const text1 = findWords ('this is a text paragraph' , 'text')
 
+//ANOTHER SOLUTION 
+// let word = prompt("enter the word you are looking for? ")
+// let paragraph = prompt("enter the content? ")
+// let arrayWords = paragraph.split(' ')
+// let count = 0
+// console.log(arrayWords)
+// arrayWords.forEach(element => {
+//     console.log(element)
+//     if( element === word){
+//         count ++
+//     }
+    
+// });
+// if (count === 0){
+//     console.log('didnot find word')
+// }else{
+//     console.log(`There are ${count} of this "${word}"`)
+// }
 
-//??????
+
+//??????need to conver to oop
