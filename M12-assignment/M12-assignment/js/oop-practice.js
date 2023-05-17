@@ -155,5 +155,50 @@
 //     console.log(`There are ${count} of this "${word}"`)
 // }
 
+//Another solution in oop
+//need to convert to oop
+// class findWords {
+//     constructor(){
+//         this.word = ' '
+//         this.paragragh = ' '
+//         this.arrayWords = []
+//         this.count = 0
+//     }
 
-//??????need to conver to oop
+//     //method to get input
+//     getUserInput(){
+//         this.word =  prompt("enter the word you are looking for? ")
+//         this.paragragh = prompt("enter the content? ")
+//     }
+
+//     //method to find
+//     findOccurance (){
+//         this.arrayWords = this.paragragh.split(' ')
+//         this.arrayWords.forEach(element => {
+//                 // console.log(element)
+//                 if( element === this.word){
+//                     this.count ++
+//                 }
+                
+//             });
+          
+//     }
+//     //method to display
+//     display(){
+//         if (this.count === 0){
+//             console.log('didnot find word')
+//         }else{
+//             console.log(`There are ${this.count} of this "${this.word}" in this paragraph "${this.paragragh}"`)
+//         }
+//     }
+//     run(){
+//         this.getUserInput()
+//         this.findOccurance()
+//         this.display()
+//     }
+// }
+
+// //create inatiate of object
+// const example = new findWords()
+// //apply method on the object
+// example.run()
