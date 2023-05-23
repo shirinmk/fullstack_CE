@@ -1,0 +1,4 @@
+type "npm run start
+open another terminal and this time type "npm run watch
+attention in index.html no need to mention public because you are in the same
+git reset === to discard previous add 
