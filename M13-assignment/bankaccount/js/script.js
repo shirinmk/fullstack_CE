@@ -32,3 +32,41 @@ function withdrawalFunc(){
 user_name.addEventListener('click', nameFun)
 user_deposit.addEventListener('click', depositFunc)
 user_withdrawal.addEventListener('click', withdrawalFunc)
+
+
+function bankAccount(ownerName){
+   
+    let balance = 0
+    const owner = ownerName
+    
+    return {
+        withdrawal : function(widthrawalAmount){
+            if(widthrawalAmount > balance){
+                console.log("not sufficient money")
+            }else{
+                balance -= widthrawalAmount
+                console.log("widthrawl successful")
+            }
+        },
+        deposit : function(depositAmount){
+            if(depositAmount > 1000){
+                console.log("amount bigger than 1000 must be done at bank")
+            }else{
+                balance += depositAmount
+            }
+        },
+        getBalance : function(){
+            console.log(`current balance is ${balance}`)
+        },
+        getOwner : function(){
+            console.log(`The name of this account is ${owner}`)
+        }
+    }//end of object
+}
+
+const obj1 = bankAccount("shirin")
+obj1.getBalance()
+obj1.getOwner()
+obj1.deposit(500)
+obj1.withdrawal(100)
+obj1.getBalance()
